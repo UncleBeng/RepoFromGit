@@ -30,6 +30,7 @@ namespace RepoFromGit
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // services.AddResponseCaching();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -48,6 +49,8 @@ namespace RepoFromGit
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            // app.UseResponseCaching();
 
             app.UseMvc(routes =>
             {
